@@ -1,0 +1,72 @@
+.hero {
+
+}
+
+.hero .logo {
+    background: #EAEFF3 url('/img/hero-bg.jpg') no-repeat center center;
+    /*background: url('/img/hero-bg2.png') no-repeat center center;*/
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    padding: 150px 0;
+    height: auto;
+}
+
+.hero .logo img {
+    max-width: 512px;
+}
+
+.hero .navbar {
+    background: black;
+}
+
+.hero .navbar ul {
+    list-style: none;
+    display: inline-block;
+    margin-bottom: 0;
+}
+
+.hero .navbar ul li {
+    float: left;
+}
+
+.hero .navbar ul li{
+    font-size: 1.3rem;
+}
+
+/*.navbar, .navbar a {*/
+/*color: white;*/
+/*font-size: 1.2rem;*/
+/*font-weight: 800;*/
+/*}*/
+
+/*.navbar ul {*/
+/*list-style: none;*/
+/*margin: 0;*/
+/*padding: 0;*/
+/*}*/
+
+/*.navbar ul li {*/
+/*float: left;*/
+/*padding: 10px 20px;*/
+/*}*/
+
+/*.head .logo img {*/
+/*height: 128px;*/
+/*}*/
+
+/*.social ul {*/
+/*vertical-align: middle;*/
+/*display: table;*/
+/*margin: auto;*/
+/*list-style: none;*/
+/*}*/
+
+/*.social ul li {*/
+/*float: left;*/
+/*padding: 10px 10px;*/
+/*background-color: red;*/
+/*margin: 0 4px;*/
+/*}*/
+
