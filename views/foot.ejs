@@ -3,12 +3,12 @@
 <script src="/components/instafeed.js/instafeed.min.js"></script>
 
 <script type="text/javascript">
-    var feed = new Instafeed({
-        get: 'tagged',
-        tagName: 'awesome',
-        clientId: 'YOUR_CLIENT_ID'
+    var userFeed = new Instafeed({
+        get: 'user',
+        userId: '2263249088',
+        clientId: '40c13647fd554528ae581c422892c896'
     });
-    feed.run();
+    userFeed.run();
 </script>
 
 </body>
