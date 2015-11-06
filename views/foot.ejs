@@ -3,19 +3,18 @@
 <script src="/components/instafeed.js/instafeed.min.js"></script>
 
 <script type="text/javascript">
-    
-    var userFeed = new Instafeed({
-        get: 'user',
-        userId: 2263249088,
-        clientId: '40c13647fd554528ae581c422892c896',
 
-        resolution: 'standard_resolution'
-        //    sortby: 'random',
-//    links: 'false',
-//    limit: '10',
-//    template: '<div id="caption">{{caption}} <br>{{likes}} likes on my <a href="http://instagram.com/hemeon" class="sky">instagram</a></div><div id="bg"><img src="{{image}}" /></div>',
+
+    var feed = new Instafeed({
+//        get: 'tagged',
+//        tagName: 'awesome',
+
+        get: 'user',
+        userId: '2263249088',
+
+        clientId: '40c13647fd554528ae581c422892c896'
     });
-    userFeed.run();
+    feed.run();
 
 </script>
 
