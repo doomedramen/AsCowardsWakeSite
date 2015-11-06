@@ -55,6 +55,7 @@ img.responsive {
 }
 
 .nav > li > a {
+    font-family: 'Montserrat', sans-serif;
     padding-top: 8px;
     padding-bottom: 8px;
     font-size: 2rem;
