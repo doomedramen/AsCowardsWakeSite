@@ -72,6 +72,9 @@ img.responsive {
     padding-left: 4px;
     padding-right: 4px;
 }
+.social img:hover, .nav-social img:hover{
+    opacity: 1;
+}
 .social img {
     float: right;
 }
