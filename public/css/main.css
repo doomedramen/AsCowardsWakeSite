@@ -62,6 +62,24 @@ img.responsive {
     text-transform: uppercase;
 }
 
+.social {
+    padding-bottom: 8px;
+    margin-top: -40px;
+}
+.social img, .nav-social img{
+    height:32px;
+    opacity: 0.6;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+.social img {
+    float: right;
+}
+
+#navbar > ul > li.nav-social a {
+    display: inline;
+}
+
 @media (max-width: 768px) {
     .header-bg .logo {
         padding: 50px 0;
@@ -70,9 +88,16 @@ img.responsive {
     .navbar-nav {
         text-align: center;
     }
+    .social{
+        display: none;
+    }
 }
 
 @media (min-width: 768px) {
+
+    #navbar > ul > li.nav-social {
+        display: none;
+    }
     .navbar-nav {
         width: 100%;
         text-align: center;
@@ -83,3 +108,4 @@ img.responsive {
         display: inline-block;
     }
 }
+
