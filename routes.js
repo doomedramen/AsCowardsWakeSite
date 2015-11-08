@@ -4,7 +4,9 @@ var router = express.Router();
 var Controller = require(__dirname + '/controllers/controller.js');
 
 router.get('/', Controller.index);
-
-router.get('/bio', Controller.bio);
+router.get('/about', Controller.about);
+router.get('/shows', Controller.shows);
+router.get('/media', Controller.media);
+router.get('/contact', Controller.contact);
 
 module.exports = router;
