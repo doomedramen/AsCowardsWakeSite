@@ -96,6 +96,18 @@ img.responsive {
     text-align: center;
 }
 
+.float_center {
+    float: right;
+
+    position: relative;
+    left: -50%; /* or right 50% */
+    text-align: left;
+}
+.float_center > .child {
+    position: relative;
+    left: 50%;
+}
+
 iframe.center {
     display: block;
     margin: 0 auto;
