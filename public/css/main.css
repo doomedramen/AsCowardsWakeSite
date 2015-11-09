@@ -5,6 +5,8 @@ html, body {
     color: #353535;
     background-color: #ffffff;
     font-family: 'Open Sans', sans-serif;
+
+    margin-bottom: 64px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -66,15 +68,18 @@ img.responsive {
     padding-bottom: 8px;
     margin-top: -40px;
 }
-.social img, .nav-social img{
-    height:32px;
+
+.social img, .nav-social img {
+    height: 32px;
     opacity: 0.8;
     padding-left: 4px;
     padding-right: 4px;
 }
-.social img:hover, .nav-social img:hover{
+
+.social img:hover, .nav-social img:hover {
     opacity: 1;
 }
+
 .social img {
     float: right;
 }
@@ -101,10 +106,12 @@ iframe.center {
         padding: 50px 0;
         height: auto;
     }
+
     .navbar-nav {
         text-align: center;
     }
-    .social{
+
+    .social {
         display: none;
     }
 }
@@ -114,6 +121,7 @@ iframe.center {
     #navbar > ul > li.nav-social {
         display: none;
     }
+
     .navbar-nav {
         width: 100%;
         text-align: center;
