@@ -96,16 +96,41 @@ img.responsive {
     text-align: center;
 }
 
-.float_center {
+.shops {
     float: right;
 
     position: relative;
     left: -50%; /* or right 50% */
     text-align: left;
 }
-.float_center > .child {
+
+.shops > .child {
     position: relative;
     left: 50%;
+}
+
+.shops > ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 10px 0;
+}
+
+.shops > ul li {
+    float: left;
+    list-style-type: none;
+    margin: 0 6px;
+}
+
+.shops > ul a {
+    display: block;
+    height: 26px;
+    line-height: 26px;
+    text-decoration: none;
+    color: #C12247;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 0px 4px;
+    background-color: #ffffff;
 }
 
 iframe.center {
