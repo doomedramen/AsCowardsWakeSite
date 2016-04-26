@@ -1,7 +1,14 @@
 <% include ./head.ejs %>
 
 <div class="container">
-    <script type='text/javascript' src='http://widget.bandsintown.com/javascripts/bit_widget.js'></script><a href="http://www.bandsintown.com/As%20Cowards%20Wake" class="bit-widget-initializer" data-artist="As Cowards Wake" data-prefix="fbjs">As Cowards Wake Tour Dates</a>
+   <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.6&appId=564109033704504";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 </div>
 
 <% include ./foot.ejs %>
