@@ -1,7 +1,7 @@
 var Controller = {};
 var FB = require('fb');
 var moment = require('moment');
-var config = require('./config.json');
+var config = require('../config.json');
 Controller.index = function (req, res, next) {
     res.render('index');
 };
