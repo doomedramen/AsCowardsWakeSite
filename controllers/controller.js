@@ -33,19 +33,30 @@ Controller.shows = function (req, res, next) {
                     if (!response || response.err) {
                         console.error(err)
                     } else {
-                        console.log(response);
-
                         var now = moment();
 
                         response.data.map(function (e) {
+console.log(e)
+                            FB.api(
+                                e.id+"/picture",
+                                function (picResponse) {
+                                    if (picResponse && !picResponse.error) {
+                                        /* handle the result */
+                                    } else {
+console.log(picResponse);
+                                    }
 
-                            var finished = now.isAfter(e.end_time);
+                                    var finished = now.isAfter(e.end_time);
+                                    if (finished) {
+                                        events.past.push(e);
+                                    } else {
+                                        events.upcoming.push(e);
+                                    }
 
-                            if (finished) {
-                                events.past.push(e);
-                            } else {
-                                events.upcoming.push(e);
-                            }
+                                }
+                            );
+
+
                         });
                     }
                     res.render('shows', {events:events});
