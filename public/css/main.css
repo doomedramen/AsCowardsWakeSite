@@ -170,3 +170,7 @@ iframe.center {
     }
 }
 
+.embed-responsive {
+    max-width: 720px;
+    margin: auto;
+}
