@@ -1,0 +1,7 @@
+{
+  "auth":{
+    "client_id": "786348158168171",
+    "client_secret": "39e0d00be10cf709495ee8ea603642e2",
+    "grant_type": "client_credentials"
+  }
+}
