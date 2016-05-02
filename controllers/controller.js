@@ -18,7 +18,7 @@ Controller.shows = function (req, res, next) {
 
     FB.api('oauth/access_token', {
         client_id: config.auth.client_id,
-        client_secret: config.aut.client_secret,
+        client_secret: config.auth.client_secret,
         grant_type: config.auth.grant_type
     }, function (fRes) {
         if (!fRes || fRes.error) {
