@@ -169,9 +169,3 @@ iframe.center {
         display: inline-block;
     }
 }
-
-.embed-responsive {
-    max-width: 720px;
-    max-height: 540px;
-    margin: auto;
-}
