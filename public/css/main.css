@@ -209,6 +209,9 @@ iframe.center {
     .ep_page {
         padding-top: 8px;
     }
+    .ep_text{
+        display: none;
+    }
 
     .header-bg .logo {
         padding: 50px 0;
