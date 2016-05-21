@@ -207,10 +207,10 @@ iframe.center {
 @media (max-width: 768px) {
 
     .ep_page {
-        padding-top: 8px;
+        padding-top: 16px;
     }
-    .ep_text{
-        display: none;
+    .ep_page .ep_text{
+        display: none; !important;
     }
 
     .header-bg .logo {
