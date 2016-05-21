@@ -181,19 +181,18 @@ img.responsive {
     text-align: center;
  }
 .ep_page .store_icons img{
-    width:64px;
+    /*width:64px;*/
     height:64px;
-    /*float:left;*/
-    /*display: block;*/
-    /*margin-left: auto;*/
-    /*margin-right: auto;*/
+    padding-left: 4px;
+    padding-right: 4px;
 }
-.ep_social{
-    margin-top:8px;
+.ep_page .ep_social{
+    text-align: center;
+    margin-top:20px;
     margin-bottom: 8px;
-    float: right;
+    /*float: right;*/
 }
-.ep_social img{
+.ep_page .ep_social img{
     height: 32px;
     padding-left: 4px;
     padding-right: 4px;
@@ -209,7 +208,7 @@ iframe.center {
     .ep_page {
         padding-top: 8px;
     }
-    
+
     .header-bg .logo {
         padding: 50px 0;
         height: auto;
