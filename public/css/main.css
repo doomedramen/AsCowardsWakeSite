@@ -205,6 +205,11 @@ iframe.center {
 }
 
 @media (max-width: 768px) {
+
+    .ep_page {
+        padding-top: 8px;
+    }
+    
     .header-bg .logo {
         padding: 50px 0;
         height: auto;
@@ -220,10 +225,6 @@ iframe.center {
 }
 
 @media (min-width: 768px) {
-
-    .ep_page {
-        padding-top: 8px;
-    }
 
     #navbar > ul > li.nav-social {
         display: none;
