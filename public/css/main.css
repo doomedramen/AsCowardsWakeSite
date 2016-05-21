@@ -189,6 +189,8 @@ img.responsive {
     /*margin-right: auto;*/
 }
 .ep_social{
+    margin-top:8px;
+    margin-bottom: 8px;
     float: right;
 }
 .ep_social img{
