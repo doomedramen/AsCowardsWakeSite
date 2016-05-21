@@ -6,7 +6,9 @@ html, body {
     background-color: #ffffff;
     font-family: 'Open Sans', sans-serif;
 
-    margin-bottom: 64px;
+    height:100%;
+
+    /*padding-bottom: 64px;*/
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -130,6 +132,53 @@ img.responsive {
     text-transform: uppercase;
     padding: 0px 4px;
     background-color: #ffffff;
+}
+
+.ep_page{
+    height: 100%;
+    padding-top:64px;
+    color:#ffffff;
+    background: url(/img/ep_index.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.ep_page h1 {
+    font-size: 5rem;
+    margin: 20px;
+}
+
+.ep_page img.ep_text{
+    width:100%;
+    max-width: 512px;
+    height:auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.ep_page .ep_image{
+    -webkit-box-shadow:0 0 80px 0 rgba(0,0,0,0.75);
+    -moz-box-shadow: 0 0 80px 0 rgba(0,0,0,0.75);
+    box-shadow: 0 0 80px 0 rgba(0,0,0,0.75);
+    padding:0 !important;
+
+    width:100%;
+    max-width: 400px;
+    height:auto;
+}
+
+.ep_page .store_icons{
+    text-align: center;
+ }
+.ep_page .store_icons img{
+    width:64px;
+    height:64px;
+    /*float:left;*/
+    /*display: block;*/
+    /*margin-left: auto;*/
+    /*margin-right: auto;*/
 }
 
 iframe.center {
