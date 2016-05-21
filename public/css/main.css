@@ -140,6 +140,7 @@ img.responsive {
 }
 
 .ep_page{
+    background-color: #525741;
     position: absolute;
     min-height: 100%;
     width:100%;
