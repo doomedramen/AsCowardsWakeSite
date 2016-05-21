@@ -143,7 +143,7 @@ img.responsive {
     position: absolute;
     min-height: 100%;
     width:100%;
-    padding-top:32px;
+    padding-top:64px;
     padding-bottom:8px;
     color:#ffffff;
     background: url(/img/ep_index.jpg) no-repeat center center fixed;
@@ -220,6 +220,10 @@ iframe.center {
 }
 
 @media (min-width: 768px) {
+
+    .ep_page {
+        padding-top: 8px;
+    }
 
     #navbar > ul > li.nav-social {
         display: none;
