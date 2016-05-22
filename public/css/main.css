@@ -20,6 +20,13 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Montserrat', sans-serif;
 }
 
+.spotify{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 25px;
+}
+
 .header-bg {
     background: #EAEFF3 url('/img/hero-bg.jpg') no-repeat center center;
     -webkit-background-size: cover;
