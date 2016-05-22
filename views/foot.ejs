@@ -34,8 +34,15 @@
     ga('create', 'UA-36299627-7', 'auto');
     ga('send', 'pageview');
 
+    $('a').on('click',function(){
+        ga('send', 'event', {
+            eventCategory: 'Outbound Link',
+            eventAction: 'click',
+            eventLabel: event.target.href
+        });
+    })
+
 </script>
-<!-- End GA Code -->
 </body>
 </html>
 
