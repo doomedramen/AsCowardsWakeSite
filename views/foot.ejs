@@ -44,6 +44,24 @@
         });
     })
 
+    $('button').on('click',function(){
+        ga('send', 'event', {
+            eventCategory: 'clicked play',
+            eventAction: 'click',
+            eventLabel: 'spotify'
+        });
+    })
+
+    $('.track-row').on('click',function(){
+        ga('send', 'event', {
+            eventCategory: 'track play',
+            eventAction: 'click',
+            eventLabel: 'spotify'
+        });
+    })
+
+
+
 </script>
 </body>
 </html>
