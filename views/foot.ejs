@@ -10,20 +10,6 @@
     });
 </script>
 
-<!-- Piwik -->
-<script type="text/javascript">
-    var _paq = _paq || [];
-    _paq.push(['trackPageView']);
-    _paq.push(['enableLinkTracking']);
-    (function() {
-        _paq.push(['setTrackerUrl',  'https://api-fb7fb68851e4580a2068bb0c381907f5.oasis.sandstorm.io']);
-        _paq.push(['setSiteId', 2]);
-        _paq.push(['setApiToken', 'WpAd9hnDKlwqEvTKF8cQYGHkXXg0Ly_6l03SCnrx4mh']);
-        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-        g.type='text/javascript'; g.async=true; g.defer=true; g.src='https://ijotue6mf8wpldqbraqg.oasis.sandstorm.io/embed.js'; s.parentNode.insertBefore(g,s);
-    })();
-</script>
-<!-- End Piwik Code -->
 <!-- GA -->
 <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -34,9 +20,9 @@
     ga('create', 'UA-36299627-7', 'auto');
     ga('send', 'pageview');
 
+
     $('a').on('click',function(){
         var self = $(this);
-        console.log(self.attr("href"));
         ga('send', 'event', {
             eventCategory: 'Outbound Link',
             eventAction: 'click',
@@ -44,21 +30,7 @@
         });
     })
 
-    $('button').on('click',function(){
-        ga('send', 'event', {
-            eventCategory: 'clicked play',
-            eventAction: 'click',
-            eventLabel: 'spotify'
-        });
-    })
 
-    $('.track-row').on('click',function(){
-        ga('send', 'event', {
-            eventCategory: 'track play',
-            eventAction: 'click',
-            eventLabel: 'spotify'
-        });
-    })
 
 
 
