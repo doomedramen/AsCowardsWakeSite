@@ -2,17 +2,20 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800);
 
 html, body {
-    color: #353535;
-    background-color: #ffffff;
+    color: #505050;
+    /*color: #ECF0F1;*/
+    background-color: #e8e8e8;
+    /*background-color: #252525;*/
     font-family: 'Open Sans', sans-serif;
 
     /*padding-bottom: 64px;*/
 }
 
-html{
+html {
     height: 100%;
 }
-body{
+
+body {
     min-height: 100%;
 }
 
@@ -20,27 +23,47 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Montserrat', sans-serif;
 }
 
-.big_quote{
-    font-size:3rem;
+.profile-pic {
+    /*border-radius: 50%;*/
+    margin-bottom: 20px;
+}
+
+.padd {
+    /*padding-top: 20px;*/
+    padding-bottom: 30px;
+}
+
+.media-item {
+    margin-bottom: 20px;
+}
+
+.media-item img {
+    width: 100%;
+    max-width: 280px;
+}
+
+.big_quote {
+    font-size: 3rem;
     line-height: 2rem;
 }
 
-.quote{
+.quote {
     font-size: 2rem;
     font-style: italic;
     margin: 25px;
     display: block;
 }
 
-.spotify{
+.spotify {
     display: block;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 25px;
-    width:100%;
+    width: 100%;
 }
-#extra{
-    height:150px;
+
+#extra {
+    height: 150px;
 }
 
 .header-bg {
@@ -162,14 +185,14 @@ img.responsive {
     background-color: #ffffff;
 }
 
-.ep_page{
+.ep_page {
     background-color: #525741;
     position: absolute;
     min-height: 100%;
-    width:100%;
-    padding-top:64px;
-    padding-bottom:8px;
-    color:#ffffff;
+    width: 100%;
+    padding-top: 64px;
+    padding-bottom: 8px;
+    color: #ffffff;
     background: url(/img/ep_index.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -182,41 +205,44 @@ img.responsive {
     margin: 20px;
 }
 
-.ep_page img.ep_text{
-    width:100%;
+.ep_page img.ep_text {
+    width: 100%;
     max-width: 512px;
-    height:auto;
+    height: auto;
     padding-top: 20px;
     padding-bottom: 20px;
 }
 
-.ep_page .ep_image{
-    -webkit-box-shadow:0 0 80px 0 rgba(0,0,0,0.75);
-    -moz-box-shadow: 0 0 80px 0 rgba(0,0,0,0.75);
-    box-shadow: 0 0 80px 0 rgba(0,0,0,0.75);
-    padding:0 !important;
+.ep_page .ep_image {
+    -webkit-box-shadow: 0 0 80px 0 rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0 0 80px 0 rgba(0, 0, 0, 0.75);
+    box-shadow: 0 0 80px 0 rgba(0, 0, 0, 0.75);
+    padding: 0 !important;
 
-    width:100%;
+    width: 100%;
     max-width: 400px;
-    height:auto;
+    height: auto;
 }
 
-.ep_page .store_icons{
+.ep_page .store_icons {
     text-align: center;
- }
-.ep_page .store_icons img{
+}
+
+.ep_page .store_icons img {
     /*width:64px;*/
-    height:64px;
+    height: 64px;
     padding-left: 4px;
     padding-right: 4px;
 }
-.ep_page .ep_social{
+
+.ep_page .ep_social {
     text-align: center;
-    margin-top:20px;
+    margin-top: 20px;
     margin-bottom: 8px;
     /*float: right;*/
 }
-.ep_page .ep_social img{
+
+.ep_page .ep_social img {
     height: 32px;
     padding-left: 4px;
     padding-right: 4px;
@@ -232,8 +258,10 @@ iframe.center {
     .ep_page {
         padding-top: 16px;
     }
-    .ep_page .ep_text{
-        display: none; !important;
+
+    .ep_page .ep_text {
+        display: none;
+    !important;
     }
 
     .header-bg .logo {

@@ -2,14 +2,16 @@ var Controller = {};
 var FB = require('fb');
 var moment = require('moment');
 var config = require('../config.json');
+var async = require('async');
 Controller.index = function (req, res, next) {
-    res.render('index');
+    return res.redirect('/shows');
+    // res.render('news');
 };
 Controller.about = function (req, res, next) {
-    res.render('about');
+    return res.render('about');
 };
 Controller.bio = function (req, res, next) {
-    res.render('bio');
+    return res.render('bio');
 };
 Controller.shows = function (req, res, next) {
 
@@ -28,25 +30,42 @@ Controller.shows = function (req, res, next) {
             var accessToken = fRes.access_token;
             FB.setAccessToken(accessToken);
             FB.api(
-                "/959051970803998/events",
-                function ( response) {
+                "/" + config.FBID + "/events",
+                function (response) {
                     if (!response || response.err) {
-                        console.error(err)
+                        console.error(response.err)
                     } else {
                         var now = moment();
 
-                        response.data.map(function (e) {
+                        async.forEachOf(response.data, function (value, key, callback) {
+                            var eventDate = moment(value.start_time);
 
-                            var finished = now.isAfter(e.end_time);
+                            value.month = eventDate.format('MMM');
+                            value.day = eventDate.format('D');
 
+                            var finished = now.isAfter(value.end_time);
                             if (finished) {
-                                events.past.push(e);
+                                events.past.push(value);
                             } else {
-                                events.upcoming.push(e);
+                                events.upcoming.push(value);
                             }
+
+                            // FB.api(
+                            // "/" + value.id + "/picture",
+                            // function (response) {
+                            //     if (response && !response.error) {
+                            //         value.picture = response;
+                            //     }
+                            //     console.log('pic', response);
+                            callback();
+                            // }
+                            // );
+
+                        }, function (err) {
+                            if (err) console.error(err.message);
+                            return res.render('shows', {events: events});
                         });
                     }
-                    res.render('shows', {events:events});
                 }
             );
         }
@@ -54,10 +73,10 @@ Controller.shows = function (req, res, next) {
 
 };
 Controller.media = function (req, res, next) {
-    res.render('media');
+    return res.render('media');
 };
 Controller.contact = function (req, res, next) {
-    res.render('contact');
+    return res.render('contact');
 };
 
 
