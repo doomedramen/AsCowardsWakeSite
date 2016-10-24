@@ -49,18 +49,7 @@ Controller.shows = function (req, res, next) {
                             } else {
                                 events.upcoming.push(value);
                             }
-
-                            // FB.api(
-                            // "/" + value.id + "/picture",
-                            // function (response) {
-                            //     if (response && !response.error) {
-                            //         value.picture = response;
-                            //     }
-                            //     console.log('pic', response);
                             callback();
-                            // }
-                            // );
-
                         }, function (err) {
                             if (err) console.error(err.message);
                             return res.render('shows', {events: events});
@@ -77,6 +66,10 @@ Controller.media = function (req, res, next) {
 };
 Controller.contact = function (req, res, next) {
     return res.render('contact');
+};
+
+Controller.pressPack = function (req, res, next) {
+    return res.render('presspack');
 };
 
 

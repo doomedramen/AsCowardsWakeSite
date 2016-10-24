@@ -47,6 +47,16 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 2rem;
 }
 
+.justify {
+    text-align: justify;
+}
+
+.promo-quote {
+    font-size: 1.5rem;
+    font-style: italic;
+    color: #84000d;
+}
+
 .quote {
     font-size: 2rem;
     font-style: italic;
