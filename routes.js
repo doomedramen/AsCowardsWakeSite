@@ -9,6 +9,4 @@ router.get('/shows', Controller.shows);
 router.get('/media', Controller.media);
 router.get('/contact', Controller.contact);
 
-router.get('/presspack',Controller.pressPack);
-
 module.exports = router;

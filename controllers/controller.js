@@ -68,9 +68,5 @@ Controller.contact = function (req, res, next) {
     return res.render('contact');
 };
 
-Controller.pressPack = function (req, res, next) {
-    return res.render('presspack');
-};
-
 
 module.exports = Controller;
