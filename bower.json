@@ -1,0 +1,20 @@
+{
+  "name": "ascowardswake",
+  "description": "",
+  "main": "server.js",
+  "authors": [
+    "Martin Page <wookoouk@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/wookoouk/AsCowardsWakeSite",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}

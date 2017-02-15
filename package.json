@@ -1,0 +1,26 @@
+{
+  "name": "ascowardswake",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wookoouk/AsCowardsWakeSite.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wookoouk/AsCowardsWakeSite/issues"
+  },
+  "homepage": "https://github.com/wookoouk/AsCowardsWakeSite#readme",
+  "dependencies": {
+    "ejs": "^2.5.5",
+    "express": "^4.14.1",
+    "fb": "^1.1.1",
+    "moment": "^2.17.1"
+  }
+}
