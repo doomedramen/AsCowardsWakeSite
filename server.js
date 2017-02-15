@@ -1,90 +1,80 @@
-#!/usr/bin/env node
-
-/**
- * Module dependencies.
- */
-
-var app = require('./app');
-var http = require('http');
+var express = require('express');
+var FB = require('fb');
+var moment = require('moment');
 var config = require('./config.json');
 
-/**
- * Get port from environment and store in Express.
- */
+var app = express();
+app.set('view engine', 'ejs');
+app.use('/', express.static(__dirname + '/public'));
 
-var port = normalizePort(config.port);
-app.set('port', port);
 
-/**
- * Create HTTP server.
- */
+app.get('/', function (req, res) {
 
-var server = http.createServer(app);
 
-/**
- * Listen on provided port, on all network interfaces.
- */
+    var events = {upcoming: [], past: []};
 
-server.listen(port);
-server.on('error', onError);
-server.on('listening', onListening);
 
-/**
- * Normalize a port into a number, string, or false.
- */
+    FB.api('oauth/access_token', {
+        client_id: config.auth.client_id,
+        client_secret: config.auth.client_secret,
+        grant_type: config.auth.grant_type
+    }, function (fRes) {
+        if (!fRes || fRes.error) {
+            console.log(!fRes ? 'error occurred' : fRes.error);
+            return res.render('shows', {events: events});
+        } else {
+            var accessToken = fRes.access_token;
+            FB.setAccessToken(accessToken);
+            FB.api(
+                "/" + config.FBID + "/events",
+                function (response) {
+                    if (!response || response.err) {
+                        console.error(response.err)
+                    } else {
+                        var now = moment();
 
-function normalizePort(val) {
-    var port = parseInt(val, 10);
+                        response.data.map(function(value){
+                            var eventDate = moment(value.start_time);
 
-    if (isNaN(port)) {
-        // named pipe
-        return val;
-    }
+                            value.month = eventDate.format('MMM');
+                            value.day = eventDate.format('D');
 
-    if (port >= 0) {
-        // port number
-        return port;
-    }
+                            var finished = now.isAfter(value.end_time);
+                            if (finished) {
+                                events.past.push(value);
+                            } else {
+                                events.upcoming.push(value);
+                            }
+                        });
 
-    return false;
-}
+                        return res.render('index', {events: events});
 
-/**
- * Event listener for HTTP server "error" event.
- */
+                        // async.forEachOf(response.data, function (value, key, callback) {
+                        //     var eventDate = moment(value.start_time);
+                        //
+                        //     value.month = eventDate.format('MMM');
+                        //     value.day = eventDate.format('D');
+                        //
+                        //     var finished = now.isAfter(value.end_time);
+                        //     if (finished) {
+                        //         events.past.push(value);
+                        //     } else {
+                        //         events.upcoming.push(value);
+                        //     }
+                        //     callback();
+                        // }, function (err) {
+                        //     if (err) console.error(err.message);
+                        //     return res.render('index', {events: events});
+                        // });
+                    }
+                }
+            );
+        }
+    });
 
-function onError(error) {
-    if (error.syscall !== 'listen') {
-        throw error;
-    }
+});
 
-    var bind = typeof port === 'string'
-        ? 'Pipe ' + port
-        : 'Port ' + port;
 
-    // handle specific listen errors with friendly messages
-    switch (error.code) {
-        case 'EACCES':
-            console.error(bind + ' requires elevated privileges');
-            process.exit(1);
-            break;
-        case 'EADDRINUSE':
-            console.error(bind + ' is already in use');
-            process.exit(1);
-            break;
-        default:
-            throw error;
-    }
-}
-
-/**
- * Event listener for HTTP server "listening" event.
- */
-
-function onListening() {
-    var addr = server.address();
-    var bind = typeof addr === 'string'
-        ? 'pipe ' + addr
-        : 'port ' + addr.port;
-    console.log('Listening on ' + bind);
-}
+app.listen(3000, function () {
+    console.log('listening')
+});

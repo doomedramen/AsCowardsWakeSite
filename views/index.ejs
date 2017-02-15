@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/favicon.ico">
+
+    <title>As Cowards Wake</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+    <link href="/css/main.css" rel="stylesheet">
+
+
+</head>
+<body>
+
+<header id="home" class="hero">
+    <div class="container">
+        <img src="/img/name.png" class="img-responsive">
+    </div>
+</header>
+
+<section>
+    <div class="container">
+        <!--<h2>Bio</h2>-->
+        <img src="/img/logo.png" class="center">
+        <p>
+            As Cowards Wake are a British metalcore band from Norfolk, formed in 2015. The band is composed of Leanne
+            Croft, Mark Radford, Richard Terry, Harry Meacey and Martin Page. In 2016 the band signed a deal with From
+            The Depths Entertainment. The band has stated that their music is influenced by metal acts such as
+            Killswitch Engage, Bullet For My Valentine, Atreyu and 36 Crazy Fists. As Cowards Wake’s debut EP, A Future
+            Stained by the Past, was released on May 19 2016.
+        </p>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <h2>Merch</h2>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <h2>Tour Dates</h2>
+
+        <h3>Upcoming</h3>
+        <% if(events.upcoming.length < 1){ %>
+        <h4>More to be announced soon</h4>
+        <% } %>
+        <% events.upcoming.map(function(event){ %>
+        <img src="<%- event.picture %>">
+        <a href="https://www.facebook.com/events/<%- event.id %>"><h4><%- event.name %></h4></a>
+        <h5><%- event.day %> <%- event.month %></h5>
+        <p><%- event.place.name %></p>
+        <!--<p><%- event.description.replace(/\r?\n/g, "<br />") %></p>-->
+        <hr>
+        <% }) %>
+
+        <!--<h3>Past</h3>-->
+        <!--<% if(events.past.length < 1){ %>-->
+        <!--<h4>none</h4>-->
+        <!--<% } %>-->
+        <!--<% events.past.map(function(event){ %>-->
+        <!--<img src="<%- event.picture %>">-->
+        <!--<a href="https://www.facebook.com/events/<%- event.id %>"><h4><%- event.name %></h4></a>-->
+        <!--<p><%- event.place.name %></p>-->
+        <!--&lt;!&ndash;<p><%- event.description %></p>&ndash;&gt;-->
+        <!--<hr>-->
+        <!--<% }) %>-->
+
+    </div>
+</section>
+
+<section>
+
+    <div class="container">
+
+        <h2>Discography</h2>
+        <h3 class="center">EPs</h3>
+
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="media-item">
+                    <img src="/img/releases/EP_SMALL.jpg" class="center">
+                    <h3 class="center">A Future Stained by the Past</h3>
+                    <h5 class="center">2016</h5>
+
+                    <div class="text-center">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-danger btn-lg dropdown-toggle center"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                GET NOW <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="https://itunes.apple.com/us/album/future-stained-by-past-single/id1115637887?ign-mpt=uo%3D4"
+                                       target="_blank">iTunes</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.amazon.com/gp/product/B01FWS05MW?ie=UTF8&amp;redirect=true"
+                                       target="_blank">Amazon</a>
+                                </li>
+                                <li>
+                                    <a href="https://play.google.com/store/music/album/As_Cowards_Wake_A_Future_Stained_by_the_Past?id=Bqupavtvqar6hgfvrgaxbjgphba"
+                                       target="_blank">Google Play</a>
+                                </li>
+                                <li>
+                                    <a href="https://open.spotify.com/album/2EtfrTWbNhd48VPkY0LQMX" target="_blank">Spotify</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h3 class="center">Singles</h3>
+
+        <div class="row">
+
+            <div class="col-sm-4">
+                <div class="media-item">
+                    <img src="/img/releases/square_one.jpg" class="center">
+                    <h3 class="center">Square One</h3>
+                    <h5 class="center">2016</h5>
+
+                    <div class="text-center">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-danger btn-lg dropdown-toggle center"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                GET NOW <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="https://itunes.apple.com/us/album/square-one-single/id1170936903"
+                                       target="_blank">iTunes</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.amazon.com/gp/product/B01M73QOFV" target="_blank">Amazon</a>
+                                </li>
+                                <li>
+                                    <a href="https://play.google.com/store/music/album/As_Cowards_Wake_Square_One?id=Btstzlnc2dlrszevqfszxr5cf5m"
+                                       target="_blank">Google Play</a>
+                                </li>
+                                <li>
+                                    <a href="https://play.spotify.com/album/5TdDjDWSNZOtJPl7vvIqMH?play=true&amp;utm_source=open.spotify.com&amp;utm_medium=open"
+                                       target="_blank">Spotify</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <div class="media-item">
+                    <img src="/img/releases/theburden.jpg" class="center">
+                    <h3 class="center">The Burden</h3>
+                    <h5 class="center">2015</h5>
+
+                    <div class="text-center">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-danger btn-lg dropdown-toggle center"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                GET NOW <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="https://itunes.apple.com/gb/album/the-burden-single/id1057077041"
+                                       target="_blank">iTunes</a>
+                                </li>
+                                <li>
+                                    <a href="http://www.amazon.co.uk/The-Burden/dp/B017QYIXCE"
+                                       target="_blank">Amazon</a>
+                                </li>
+                                <li>
+                                    <a href="https://play.google.com/store/music/album?id=Bjzuy4fq4vdvq7znatadkdrs4v4&amp;tid=song-Tjqm3ciqrl2hu3huiqofldzt63u"
+                                       target="_blank">Google Play</a>
+                                </li>
+                                <li>
+                                    <a href="https://open.spotify.com/album/6MBWTTNXeUUcDzBfrp7pP5" target="_blank">Spotify</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-sm-4">
+                <div class="media-item">
+                    <img src="/img/releases/facade.jpg" class="center">
+                    <h3 class="center">Facade</h3>
+                    <h5 class="center">2015</h5>
+
+                    <div class="text-center">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-danger btn-lg dropdown-toggle center"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                GET NOW <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="http://apple.co/1UuD0r1" target="_blank">iTunes</a>
+                                </li>
+                                <li>
+                                    <a href="http://amzn.to/1Q9voqN" target="_blank">Amazon</a>
+                                </li>
+                                <li>
+                                    <a href="http://bit.ly/1RMnBPi" target="_blank">Google Play</a>
+                                </li>
+                                <li>
+                                    <a href="http://spoti.fi/1MDH5qi" target="_blank">Spotify</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--<h3 class="center">Videos</h3>-->
+
+
+        <!--<h3 class="center">Square One</h3>-->
+        <!--<div class="embed-responsive embed-responsive-4by3">-->
+        <!--<iframe class="center embed-responsive-item" src="//www.youtube.com/embed/kEhvilJ6YyA"></iframe>-->
+        <!--</div>-->
+
+        <!--<h3 class="center">The Burden</h3>-->
+        <!--<div class="embed-responsive embed-responsive-4by3">-->
+        <!--<iframe class="center embed-responsive-item" src="//www.youtube.com/embed/zCzOZwP0hU0"></iframe>-->
+        <!--</div>-->
+
+        <!--<h3 class="center">Facade</h3>-->
+        <!--<div class="embed-responsive embed-responsive-4by3">-->
+        <!--<iframe class="center embed-responsive-item" src="//www.youtube.com/embed/2FvmE8Wvm40"></iframe>-->
+        <!--</div>-->
+
+
+    </div>
+
+</section>
+
+<section>
+    <div class="container">
+        <h2>Gallery</h2>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <!--<h2>Contact</h1>-->
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <!--<h2>Social Networks</h1>-->
+        <a href=""><img src="/img/social_icons/facebook64.png"></a>
+        <a href=""><img src="/img/social_icons/instagram64.png"></a>
+        <a href=""><img src="/img/social_icons/twitter64.png"></a>
+        <a href=""><img src="/img/social_icons/youtube64.png"></a>
+    </div>
+</section>
+
+
+<script src="/components/jquery/dist/jquery.slim.js"></script>
+<script src="/components/bootstrap/dist/js/bootstrap.js"></script>
+</body>
+</html>
