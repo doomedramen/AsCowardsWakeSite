@@ -57,24 +57,7 @@ app.get('/', function (req, res) {
 
     getFBEvents()
         .then(events => {
-
-            instaAPI.use({
-                client_secret: config.insta_auth.client_secret
-            });
-
-            instaAPI.user('2263249088', function (err, result, remaining, limit) {
-
-                if (err) {
-                    console.error(err)
-                } else {
-                    console.log(result);
-                }
-
-                return res.render('index', {events: events});
-
-            });
-
-
+            return res.render('index', {events: events});
         })
         .catch(err => {
             console.error(err);

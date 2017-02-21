@@ -236,6 +236,7 @@
 <section>
     <div class="container">
         <h2>Gallery</h2>
+        <div id="instafeed"></div>
     </div>
 </section>
 
@@ -258,6 +259,16 @@
 
 <script src="/components/jquery/dist/jquery.slim.js"></script>
 <script src="/components/bootstrap/dist/js/bootstrap.js"></script>
+
+<script src="/components/instafeed.js/instafeed.js"></script>
+<script type="text/javascript">
+    var feed = new Instafeed({
+        get: 'user',
+        userId: '2263249088',
+        accessToken: "2263249088.1677ed0.f9083d70487c4d4c92b934bce6de8385"
+    });
+    feed.run();
+</script>
 
 </body>
 </html>
