@@ -1,90 +1,85 @@
-#!/usr/bin/env node
+const express = require('express');
+const FB = require('fb');
+var instaAPI = require('instagram-node').instagram();
+const moment = require('moment');
+const config = require('./config.json');
 
-/**
- * Module dependencies.
- */
+var app = express();
+app.set('view engine', 'ejs');
+app.use('/', express.static(__dirname + '/public'));
 
-var app = require('./app');
-var http = require('http');
-var config = require('./config.json');
+function getFBEvents() {
+    return new Promise((good, bad) => {
+        var events = {upcoming: [], past: []};
 
-/**
- * Get port from environment and store in Express.
- */
 
-var port = normalizePort(config.port);
-app.set('port', port);
+        FB.api('oauth/access_token', {
+            client_id: config.fb_auth.client_id,
+            client_secret: config.fb_auth.client_secret,
+            grant_type: config.fb_auth.grant_type
+        }, function (fRes) {
+            if (!fRes || fRes.error) {
+                return bad(fRes.error);
+            } else {
+                const accessToken = fRes.access_token;
+                FB.setAccessToken(accessToken);
+                FB.api(
+                    "/" + config.FBID + "/events",
+                    function (response) {
+                        if (!response || response.err) {
+                            return bad(response.err);
+                        } else {
+                            const now = moment();
 
-/**
- * Create HTTP server.
- */
+                            response.data.map(function (value) {
+                                const eventDate = moment(value.start_time);
 
-var server = http.createServer(app);
+                                value.month = eventDate.format('MMM');
+                                value.day = eventDate.format('D');
 
-/**
- * Listen on provided port, on all network interfaces.
- */
-
-server.listen(port);
-server.on('error', onError);
-server.on('listening', onListening);
-
-/**
- * Normalize a port into a number, string, or false.
- */
-
-function normalizePort(val) {
-    var port = parseInt(val, 10);
-
-    if (isNaN(port)) {
-        // named pipe
-        return val;
-    }
-
-    if (port >= 0) {
-        // port number
-        return port;
-    }
-
-    return false;
+                                const finished = now.isAfter(value.end_time);
+                                if (finished) {
+                                    events.past.push(value);
+                                } else {
+                                    events.upcoming.push(value);
+                                }
+                            });
+                            return good(events);
+                        }
+                    }
+                );
+            }
+        });
+    });
 }
 
-/**
- * Event listener for HTTP server "error" event.
- */
+app.get('/', function (req, res) {
 
-function onError(error) {
-    if (error.syscall !== 'listen') {
-        throw error;
-    }
+    getFBEvents()
+        .then(events => {
 
-    var bind = typeof port === 'string'
-        ? 'Pipe ' + port
-        : 'Port ' + port;
+            instaAPI.use({
+                client_id: config.insta_auth.client_id,
+                client_secret: config.insta_auth.client_secret
+            });
 
-    // handle specific listen errors with friendly messages
-    switch (error.code) {
-        case 'EACCES':
-            console.error(bind + ' requires elevated privileges');
-            process.exit(1);
-            break;
-        case 'EADDRINUSE':
-            console.error(bind + ' is already in use');
-            process.exit(1);
-            break;
-        default:
-            throw error;
-    }
-}
+            instaAPI.user('2263249088', function (err, result, remaining, limit) {
 
-/**
- * Event listener for HTTP server "listening" event.
- */
+                if(err){
+                    console.error(err)
+                } else {
+                    console.log(result);
+                }
 
-function onListening() {
-    var addr = server.address();
-    var bind = typeof addr === 'string'
-        ? 'pipe ' + addr
-        : 'port ' + addr.port;
-    console.log('Listening on ' + bind);
-}
+            });
+
+
+        })
+
+
+});
+
+
+app.listen(3000, function () {
+    console.log('listening')
+});

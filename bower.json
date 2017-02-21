@@ -1,11 +1,12 @@
 {
-  "name": "AsCowardsWakeSite",
-  "version": "0.0.0",
-  "homepage": "https://github.com/wookoouk/AsCowardsWakeSite",
+  "name": "ascowardswake",
+  "description": "",
+  "main": "server.js",
   "authors": [
     "Martin Page <wookoouk@gmail.com>"
   ],
   "license": "MIT",
+  "homepage": "https://github.com/wookoouk/AsCowardsWakeSite",
   "ignore": [
     "**/.*",
     "node_modules",
@@ -14,6 +15,6 @@
     "tests"
   ],
   "dependencies": {
-    "bootstrap": "~3.3.5"
+    "bootstrap": "^3.3.7"
   }
 }
