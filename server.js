@@ -59,17 +59,18 @@ app.get('/', function (req, res) {
         .then(events => {
 
             instaAPI.use({
-                client_id: config.insta_auth.client_id,
                 client_secret: config.insta_auth.client_secret
             });
 
             instaAPI.user('2263249088', function (err, result, remaining, limit) {
 
-                if(err){
+                if (err) {
                     console.error(err)
                 } else {
                     console.log(result);
                 }
+
+                return res.render('index', {events: events});
 
             });
 
