@@ -1,8 +1,8 @@
 /*@import url('https://fonts.googleapis.com/css?family=Varela+Round');*/
 
 html, body {
-    background-color: #353535;
-    color: #D4D8E1;
+    background-color: #ECF1F5;
+    color: #505050;
 }
 
 html {
@@ -17,6 +17,12 @@ body {
     /*font-family: 'Varela Round', sans-serif;*/
 }
 
+hr {
+    /*border: 1px solid #E1E6E9;*/
+    /*background-color: #E1E6E9*/
+    border-color: #dadada;
+}
+
 .hero {
     background: url("/img/hero-bg.jpg") no-repeat center center;
     -webkit-background-size: cover;
@@ -27,10 +33,10 @@ body {
     height: auto;
 }
 
-section{
-    padding:64px 0;
+section {
+    padding: 64px 0;
 
-    border-bottom: 1px solid #484d50;
+    border-bottom: 1px solid #dadada;
 }
 
 h1, h2 {

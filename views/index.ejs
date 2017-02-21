@@ -26,7 +26,7 @@
 <section>
     <div class="container">
         <!--<h2>Bio</h2>-->
-        <img src="/img/logo.png" class="center">
+        <!--<img src="/img/logo.png" class="center" width="128px" height="128px">-->
         <p>
             As Cowards Wake are a British metalcore band from Norfolk, formed in 2015. The band is composed of Leanne
             Croft, Mark Radford, Richard Terry, Harry Meacey and Martin Page. In 2016 the band signed a deal with From
@@ -56,21 +56,8 @@
         <a href="https://www.facebook.com/events/<%- event.id %>"><h4><%- event.name %></h4></a>
         <h5><%- event.day %> <%- event.month %></h5>
         <p><%- event.place.name %></p>
-        <!--<p><%- event.description.replace(/\r?\n/g, "<br />") %></p>-->
         <hr>
         <% }) %>
-
-        <!--<h3>Past</h3>-->
-        <!--<% if(events.past.length < 1){ %>-->
-        <!--<h4>none</h4>-->
-        <!--<% } %>-->
-        <!--<% events.past.map(function(event){ %>-->
-        <!--<img src="<%- event.picture %>">-->
-        <!--<a href="https://www.facebook.com/events/<%- event.id %>"><h4><%- event.name %></h4></a>-->
-        <!--<p><%- event.place.name %></p>-->
-        <!--&lt;!&ndash;<p><%- event.description %></p>&ndash;&gt;-->
-        <!--<hr>-->
-        <!--<% }) %>-->
 
     </div>
 </section>
@@ -271,5 +258,6 @@
 
 <script src="/components/jquery/dist/jquery.slim.js"></script>
 <script src="/components/bootstrap/dist/js/bootstrap.js"></script>
+
 </body>
 </html>
