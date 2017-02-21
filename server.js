@@ -76,6 +76,10 @@ app.get('/', function (req, res) {
 
 
         })
+        .catch(err => {
+            console.error(err);
+            return res.render('index', {events: {upcoming: [], past: []}});
+        })
 
 
 });
