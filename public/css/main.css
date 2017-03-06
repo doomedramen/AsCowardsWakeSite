@@ -23,15 +23,31 @@ hr {
     border-color: #dadada;
 }
 
+
 .hero {
     background: url("/img/hero-bg.jpg") no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    padding: 200px 0;
     height: auto;
 }
+
+.hero .name{
+    padding: 180px 0;
+}
+
+.hero .social {
+    /*position: ;*/
+    float: right;
+    padding:8px;
+}
+
+.hero .social img{
+    height:40px;
+    width: auto;
+}
+
 
 section {
     padding: 64px 0;
@@ -39,8 +55,22 @@ section {
     border-bottom: 1px solid #dadada;
 }
 
+section.invert, section:nth-child(even) {
+    background-color: #343434;
+    color: #ECF1F5;
+}
+
 h1, h2 {
     text-align: center;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: 4rem;
+}
+
+h3 {
+    font-size: 3rem;
 }
 
 img.center {
