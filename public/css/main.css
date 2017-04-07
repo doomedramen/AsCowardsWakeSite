@@ -33,7 +33,7 @@ hr {
 }
 
 .hero .name {
-    padding: 180px 0;
+    padding: 140px 0 60px 0;
 }
 
 .hero .social {
@@ -65,6 +65,7 @@ h1, h2 {
 
 h2 {
     font-size: 4rem;
+    margin-bottom: 45px;
 }
 
 h3 {
@@ -84,4 +85,32 @@ img.center {
 
 .center, .text-center {
     text-align: center;
+}
+
+#tour {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+
+    -ms-word-break: break-all;
+    /* This is the dangerous one in WebKit, as it breaks things wherever */
+    word-break: break-all;
+    /* Instead use this non-standard one: */
+    word-break: break-word;
+
+    /* Adds a hyphen where the word breaks, if supported (No Blink) */
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+}
+
+#instafeed img {
+    width: 25%;
+
+}
+
+@media (max-width: 768px) {
+    #instafeed img {
+        width: 50%;
+    }
 }

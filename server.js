@@ -1,7 +1,5 @@
 const express = require('express');
 const FB = require('fb');
-var instaAPI = require('instagram-node').instagram();
-const moment = require('moment');
 const config = require('./config.json');
 
 var app = express();
@@ -9,7 +7,7 @@ app.set('view engine', 'ejs');
 app.use('/', express.static(__dirname + '/public'));
 
 function getFBEvents() {
-    return new Promise((good, bad) => {
+    return new Promise(function (good, bad) {
         var events = {upcoming: [], past: []};
 
 
@@ -29,20 +27,17 @@ function getFBEvents() {
                         if (!response || response.err) {
                             return bad(response.err);
                         } else {
-                            const now = moment();
 
                             response.data.map(function (value) {
-                                const eventDate = moment(value.start_time);
 
-                                value.month = eventDate.format('MMM');
-                                value.day = eventDate.format('D');
+                                console.log(value.start_time);
 
-                                const finished = now.isAfter(value.end_time);
-                                if (finished) {
+                                if(new Date(value.start_time) <= new Date()){
                                     events.past.push(value);
                                 } else {
                                     events.upcoming.push(value);
                                 }
+
                             });
                             return good(events);
                         }
@@ -56,10 +51,10 @@ function getFBEvents() {
 app.get('/', function (req, res) {
 
     getFBEvents()
-        .then(events => {
+        .then(function (events) {
             return res.render('index', {events: events});
         })
-        .catch(err => {
+        .catch(function (err) {
             console.error(err);
             return res.render('index', {events: {upcoming: [], past: []}});
         })
