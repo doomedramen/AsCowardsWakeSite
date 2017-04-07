@@ -23,7 +23,6 @@ hr {
     border-color: #dadada;
 }
 
-
 .hero {
     background: url("/img/hero-bg.jpg") no-repeat center center;
     -webkit-background-size: cover;
@@ -33,21 +32,20 @@ hr {
     height: auto;
 }
 
-.hero .name{
+.hero .name {
     padding: 180px 0;
 }
 
 .hero .social {
     /*position: ;*/
     float: right;
-    padding:8px;
+    padding: 8px;
 }
 
-.hero .social img{
-    height:40px;
+.hero .social img {
+    height: 64px;
     width: auto;
 }
-
 
 section {
     padding: 64px 0;
